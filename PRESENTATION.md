@@ -18,15 +18,14 @@
 
 <aside class="notes">
 (Allison)
-
-@TODO review
+* This is a very quick introduction to the world of web development - html, css, and JavaScript
 </aside>
 
 ---
 
-<!-- .slide: data-background="./img/2020/devsummit/bg-1.png" -->
+<!-- .slide: data-background="./img/2020/devsummit/bg-3.png" -->
 
-## First Some Notes
+## First, Some Notes
 
 Lots of supplemental info in these slides.
 
@@ -38,17 +37,18 @@ Slides <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://bi
 
 <aside class="notes">
 (Allison)
-
-@TODO review, check slide link
+* this is a lot to cover in a very short amount of time
+* so don't worry if things don't make sense right away
 </aside>
 
 ---
 
-<!-- .slide: data-background="./img/2020/devsummit/bg-1.png" -->
+<!-- .slide: data-background="./img/2020/devsummit/bg-3.png" -->
 
 ## Web Development is Hard
 
-You're more equipped than you think!
+* It's ok to feel overwhelmed
+* Good news: you're more equipped than you think!
 
 * Scripted with ArcPy?
 * Scripted with Python?
@@ -56,29 +56,62 @@ You're more equipped than you think!
 * Used Arcade?
 * Used Model Builder?
 
-Don't Feel Overwhelmed!
 
 <aside class="notes">
 (Allison)
-
-@TODO review
+* Technical knowledge from GIS translates very well to web development
 </aside>
 
 ---
 
-<!-- .slide: data-background="./img/2020/devsummit/bg-4.png" -->
+<!-- .slide: data-background="./img/2020/devsummit/bg-3.png" -->
 
-## HTML
+## A quick note on web servers
 
-* A basic HTML file
-* Where does it go? Web Server https://gist.github.com/jgravois/5e73b56fa7756fd00b89
+* HTML, CSS, and JS all go in your web server
+
+* [How to set up a local web server](https://gist.github.com/jgravois/5e73b56fa7756fd00b89)
+
 * Install Node > Terminal/Command Line/Windows Bash/Powershell > `npx http-server .`
-* HTML CSS and JS all go in your web server
+
+* For fast prototyping use [CodePen](https://codepen.io) or [StackBlitz](https://stackblitz.com/)
+
 
 <aside class="notes">
 (Allison)
+Using a web server doesn't necessarily mean you're serving pages on the internet for all to see. 
+You can use a local web server to load your own static files 
+In a hurry? Use a web tool like CodePen - there are lots of options 
+</aside>
 
-@TODO make demo html (codepen/stack blizt), review slide, potentially split to more slides html demo/server/ect...
+---
+
+<!-- .slide: data-background="./img/2020/devsummit/bg-3.png" -->
+
+## HTML
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello!</title>
+    <!-- <link> (CSS) goes here -->
+  </head>
+  <body>
+    <!-- Content (more html) goes here -->
+    <h1>Welcome</h1>
+    <img src="img/bunsen.jpg" alt="My dog Bunsen">
+    <!-- <script> (JavaScript) goes here -->
+  </body>
+</html>
+```
+[HTML documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML)
+
+<aside class="notes">
+(Allison)
+@TODO should this be a CodePen? 
+
 </aside>
 
 ---
@@ -363,14 +396,13 @@ Grid Template Areas</a></p>
 
 ---
 
-<!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
+<!-- .slide: data-background="./img/2020/devsummit/bg-4.png" -->
 
 ## JavaScript
 
 <aside class="notes">
 (Allison)
 
-@TODO review
 </aside>
 
 ---
@@ -387,12 +419,11 @@ Grid Template Areas</a></p>
   ```html
   <script src="app.js"></script>
   ```
-* In your browsers DevTools
+* In your browser's DevTools console
 
 <aside class="notes">
 (Allison)
 
-@TODO review
 </aside>
 
 ---
@@ -402,64 +433,36 @@ Grid Template Areas</a></p>
 ### [Variables](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var), [arithmetic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators), [comparison](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators) & [logic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
 
 ```js
-var dog;
-let nifty;
-const notGonnaChange;
+const dogName = 'Bunsen';
+var year = 2020;
+let skyBlue = true;
 
-> undefined
-
-var dogName = 'spot';
-var age = 21;
-var canBark = true;
-// value type is **not** explicitly declared
-
-```
-
-```js
-(age / 7) // 3
-
-5 + 5 // 10
-
-3 - 2 // 1
-
-3 * 2 // 6
-
-12 % 5 // 2 (modulus)
-
-age++ // 22
-
-age-- // 20
+year++ // 2021
+year-- // 2019
 
 'high' + 'five' // 'highfive'
 
-```
-
-```js
-3 === 3   // true
-3 === '3' // false
-
-'dog' != 'cat' // true
-
-3 > 2 // true
-3 >= 2 // true
-
 // logical 'and'
-true && anotherTruthy
-> true
-
+true && skyBlue // true
 // 'or'
-true || somethingFalsy
-> true
-
+true || false // true
 // 'not'
-!somethingTruthy
-> false
+!skyBlue // false
 ```
+[MDN's First Steps JavaScript guide](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps)
 
 <aside class="notes">
 (Allison)
+Demo in console: 
+- arithmatic: 
+  let year = 2020;
+  year + 5; year - 255; year*10; year/3; 
+  Math.round(year)
+- comparisons 
+3 > 1  // true
+3 === '3' // false
+'dog' != 'cat' // true
 
-@TODO condense to 1 slide
 </aside>
 
 ---
@@ -489,52 +492,34 @@ age => age * 7
 <aside class="notes">
 (Allison)
 
-@TODO review
 </aside>
 
 ---
 
-## [Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) and [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
+## [Arrays[]](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays) and [objects{}](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
 
 ```js
-var dogs = ['Spot', 'Lassie'];
-
-dogs[0] // 'Spot'
-
-dogs.push('Fido');
-
+var dogs = ['Ginsburg', 'Bunsen'];
+dogs[0] // 'Ginsburg'
+dogs.push('Spot');
 dogs.length // 3
+dogs.map(dog => dog.toUpperCase()) // ['GINSBURG', 'BUNSEN', 'SPOT']
 
-dogs.forEach(dog => {
-  console.log(dog);
-});
-> undefined
-
-dogs.map(dog => dog.toUpperCase());
-> ['SPOT', 'LASSIE', 'FIDO']
-```
-
-
-```js
 let dog = {
-  age: 7,
-  canBark: true,
-  _ssshhh: 'top secret',
-  ageInDogYears: function(age) {
-    return age * 7;
-  }
+  name: 'Ginsburg',
+  age: 4
+  ageInDogYears: function(age) {return age * 7}
 }
+dog.name // 'Ginsburg'
 
-> Object {age: 7, canBark: true, _ssshhh: 'top secret', ageInDogYears: ageInDogYears() }
-
-dog.ageInDogYears(dog.age);
-> 49
 ```
 
 <aside class="notes">
 (Allison)
 
-@TODO condense to 1 slide
+* arrays are a way to store a list of items under a single variable name
+* some array methods mutate the original, some return a new array 
+* objects - a collection of related data. Properties and methods
 </aside>
 
 ---
@@ -770,7 +755,7 @@ require([
 * [JavaScript 30](https://javascript30.com/)
 * [NodeSchool](https://nodeschool.io/)
 * [Command Line Power User](https://commandlinepoweruser.com/)
-* [Front End Handbook](https://frontendmasters.com/books/front-end-handbook/2018/)
+* [Front End Handbook](https://frontendmasters.com/books/front-end-handbook/2019/)
 
 <aside class="notes">
 (Pat)
