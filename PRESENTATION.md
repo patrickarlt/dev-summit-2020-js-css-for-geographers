@@ -72,7 +72,10 @@ Slides <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://bi
 
 * [How to set up a local web server](https://gist.github.com/jgravois/5e73b56fa7756fd00b89)
 
-* Install Node > Terminal/Command Line/Windows Bash/Powershell > `npx http-server .`
+* Install [Node](https://nodejs.org) > Terminal/Command Line/Windows Bash/Powershell
+```bash
+npx http-server .
+```
 
 * For fast prototyping use [CodePen](https://codepen.io) or [StackBlitz](https://stackblitz.com/)
 
@@ -81,6 +84,7 @@ Slides <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://bi
 (Allison)
 Using a web server doesn't necessarily mean you're serving pages on the internet for all to see.
 You can use a local web server to load your own static files
+Not comfortable on the command line? There are tons of great free resources online. Links to some in the resources slide
 In a hurry? Use a web tool like CodePen - there are lots of options
 </aside>
 
@@ -101,16 +105,17 @@ In a hurry? Use a web tool like CodePen - there are lots of options
   <body>
     <!-- Content (more html) goes here -->
     <h1>Welcome</h1>
-    <img src="img/bunsen.jpg" alt="My dog Bunsen">
+    <div>Here's some unstyled content.</div>
     <!-- <script> (JavaScript) goes here -->
   </body>
 </html>
 ```
-[HTML documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [Try it in CodePen](https://codepen.io/araedavis/pen/eYNeBXo)
+* [MDN's HTML docs and guides](https://developer.mozilla.org/en-US/docs/Web/HTML)
 
 <aside class="notes">
 (Allison)
-@TODO should this be a CodePen?
+
 
 </aside>
 
@@ -231,7 +236,7 @@ An element selector matches all elements!
 
 <!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
 
-### Lets inspect some CSS
+### Let's inspect some CSS
 
 Right click on something you want to change click "Inspect Element"
 
@@ -245,7 +250,7 @@ Right click on something you want to change click "Inspect Element"
 
 <!-- .slide: data-background="./img/2020/devsummit/bg-6.png" -->
 
-## Lets Build an App!
+## Let's Build an App!
 
 <img src="app.png" alt="A Simple Mapping App" style="border: none; background: transparent; box-shadow: none;">
 
@@ -427,7 +432,7 @@ Type is cool and color is fun.
   ```html
   <script src="app.js"></script>
   ```
-* In your browser's DevTools console
+* In your browser's [DevTools console](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)
 
 <aside class="notes">
 (Allison)
@@ -763,6 +768,7 @@ require([
 * [JavaScript 30](https://javascript30.com/)
 * [NodeSchool](https://nodeschool.io/)
 * [Command Line Power User](https://commandlinepoweruser.com/)
+* [Codecademy Bash Scripting course](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)
 * [Front End Handbook](https://frontendmasters.com/books/front-end-handbook/2019/)
 
 <aside class="notes">
