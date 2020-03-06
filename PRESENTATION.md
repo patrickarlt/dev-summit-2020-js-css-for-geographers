@@ -79,9 +79,9 @@ Slides <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://bi
 
 <aside class="notes">
 (Allison)
-Using a web server doesn't necessarily mean you're serving pages on the internet for all to see. 
-You can use a local web server to load your own static files 
-In a hurry? Use a web tool like CodePen - there are lots of options 
+Using a web server doesn't necessarily mean you're serving pages on the internet for all to see.
+You can use a local web server to load your own static files
+In a hurry? Use a web tool like CodePen - there are lots of options
 </aside>
 
 ---
@@ -110,7 +110,7 @@ In a hurry? Use a web tool like CodePen - there are lots of options
 
 <aside class="notes">
 (Allison)
-@TODO should this be a CodePen? 
+@TODO should this be a CodePen?
 
 </aside>
 
@@ -120,10 +120,15 @@ In a hurry? Use a web tool like CodePen - there are lots of options
 
 ## CSS
 
+<pre style="font-size: 125%;"><code class="ss">html, body, #map {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}</code></pre>
+
 <aside class="notes">
 (Nate)
-
-@TODO review
+CSS is a language for specifying how documents are presented to users — how they are styled, laid out, etc.
 </aside>
 
 ---
@@ -132,20 +137,28 @@ In a hurry? Use a web tool like CodePen - there are lots of options
 
 ### Where does CSS go?
 
-* Inside a `<style>` tag.
+- Inside a `.css` file that is loaded with a `<link>` tag.
   ```html
-  <style>/* Put CSS here*/</style>
+  <link href="my-css-file.css" rel="stylesheet" />
   ```
-* Inside a `.css` file that is loaded with a `<link>` tag.
+- Inside a `<style>` tag.
   ```html
-  <link href="my-css-file.css" rel="stylesheet" type="text/css">
+  <style>
+    /* Put CSS here*/
+  </style>
   ```
-* In the `<head>` tag of your `.html` files.
+- Inside an element’s `style` attribute. ⚠️
+  ```html
+  <p style="color:blue;">Blue text!</p>
+  ```
 
 <aside class="notes">
 (Nate)
 
-@TODO review
+A link tag is the most common place to put CSS. Many HTML documents can reference the same CSS document.
+
+Inline styles are a bit tricky, and they only affect a single element.
+
 </aside>
 
 ---
@@ -162,8 +175,11 @@ In a hurry? Use a web tool like CodePen - there are lots of options
 
 <aside class="notes">
 (Nate)
+This is a single CSS rule.
+Selectors: How we target something in our document.
+Properties: Identifiers that indicate stylistic features.
+Values: Each property is given a value that indicates your changes to that feature.
 
-@TODO review
 </aside>
 
 ---
@@ -174,15 +190,16 @@ In a hurry? Use a web tool like CodePen - there are lots of options
 
 Styles _cascade_ into the final styles for the HTML elements that match their selectors.
 
-* Browser and user styles
-* <code>&lt;link rel="stylesheet"&gt;</code>
-* <code>&lt;style&gt;</code> tags
-* Style attributes <code>&lt;div style="..."&gt;</code>
+- Browser and user styles
+- <code>&lt;link rel="stylesheet"&gt;</code>
+- <code>&lt;style&gt;</code> tags
+- Style attributes <code>&lt;div style="..."&gt;</code>
 
 <aside class="notes">
 (Nate)
-
-@TODO review
+The way the cascade behaves is the key to understanding CSS.
+The order of the rules matter: the last rule in the source wins.
+But what happens when we declare the same properties: collision!
 </aside>
 
 ---
@@ -203,8 +220,11 @@ When properties collide specificity determines which property wins.
 
 <aside class="notes">
 (Nate)
+Each type of selector is more *specific* than the next.
+An ID selector can only match one element.
+A class selector can match different element types.
+An element selector matches all elements!
 
-@TODO review
 </aside>
 
 ---
@@ -218,9 +238,7 @@ Right click on something you want to change click "Inspect Element"
 [Explore a Storymap](https://story.maps.arcgis.com/apps/Cascade/index.html?appid=46daf1304a0c4ad69a8935c7ed2ab692)
 
 <aside class="notes">
-(Nate)
-
-@TODO review
+(Nate) Preload this tab
 </aside>
 
 ---
@@ -233,165 +251,155 @@ Right click on something you want to change click "Inspect Element"
 
 <aside class="notes">
 (Nate)
-
-@TODO review
+We've got a great idea for a web app: a map that displays the locations of non-gasoline alternative fueling stations.
+How do we build it?
+Let's start by thinking of the components of our app as "boxes"; in this case, we have a box for text information, and a box for our map.
 </aside>
 
 ---
 
 <!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
 
-<h2><a href="http://jsbin.com/revage/edit?html,output">Block</a> vs <a href="http://jsbin.com/josuba/edit?html,output">Inline</a></h2>
+<h2><a href="https://codepen.io/oknoway/pen/KKpyMJK?editors=1100">Block</a> vs <a href="https://codepen.io/oknoway/pen/GRJOqLY?editors=1100">Inline</a></h2>
 
 <ul>
-  <li><a href="http://www.impressivewebs.com/difference-block-inline-css/">The Difference Between “Block” and “Inline”</a></li>
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements">Block-level elements</a></li>
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">Inline elements</a></li>
   <li><a href="http://learnlayout.com/display.html">Learn CSS Layout: the "display" property</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow">Normal Flow</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow">Block and Inline Layout in Normal Flow</a></li>
 </ul>
 
 <aside class="notes">
 (Nate)
-
-@TODO review, clone demos to new URLs, review link resources
+By default (normal flow) all elements are either *block* or *inline*, but not both.
+Block elements are laid out out one after the other, vertically, beginning at the top of a containing block.
+Inline elements are laid out horizontally, one after the other, beginning at the top of a containing block.
 </aside>
 
 ---
 
 <!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
 
-<h2><a href="http://jsbin.com/ficatu/edit?html,output">Units</h2>
+<h2><a href="https://codepen.io/oknoway/pen/BaNmLQX?editors=1100">Units</h2>
 
 <ul>
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">Full unit reference</a></li>
   <li><a href="https://css-tricks.com/the-lengths-of-css/">The Lengths of CSS</a></li>
   <li><a href="http://www.quirksmode.org/css/units-values/">Unit and Values - QuirksMode</a></li>
+  <li><a href="https://www.youtube.com/watch?v=_sgF8I-Q1Gs">📺 Layout Land: Introduction to Viewport Units</a></li>
 </ul>
 
 <aside class="notes">
 (Nate)
-
-@TODO review, clone demos to new URLs, review link resources
+There are lots of different units, but usually we're talking about length units. Length units can be either Absolute or Relative.
+Absolute length units represent an actual physical measurement: pixels, inches, or centimeters.
+For a long time, we used pixels for every length, but as viewport sizes change, and designs needed to become more flexible, we needed:
+Relative length units represent a measurement in terms of some other distance:
+the size of a specific character or the line-height of a font, or the size of the viewport.
 </aside>
 
 ---
 
 <!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
 
-<h2><a href="http://jsbin.com/livofev/8/edit?html,output">Flexbox</a></h2>
+<h2><a href="https://codepen.io/oknoway/pen/vYOWXjM?editors=1100">Flexbox</a></h2>
 
 <ul>
   <li><a href="http://flexboxfroggy.com/">Flexbox Froggy</a></li>
-  <li><a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties">A Visual Guide to CSS3 Flexbox Properties</a></li>
   <li><a href="http://learnlayout.com/flexbox.html">Learn CSS Layout: flexbox</a></li>
-  <li><a href="http://caniuse.com/#feat=flexbox">Can I Use: flexbox</a></li>
   <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">Using CSS flexible boxes</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout">MDN: CSS Flexible Box Layout</a></li>
 </ul>
 
 <aside class="notes">
 (Nate)
-
-@TODO review, clone demos to new URLs, review link resources
+Flexbox is a layout model that's optimized for UI design.
+Flexible boxes layout their children along one dimension: by default horizontally (rows) or vertically (columns).
+Flex children can "flex" their size to grow or shrink without overflowing their parents.
 </aside>
 
 ---
 
 <!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
 
-<h2><a href="http://jsbin.com/joziniv/edit?html,output">CSS Grid</a></h2>
+<h2><a href="https://codepen.io/oknoway/pen/OJVObgW?editors=1100">Positioning</a></h2>
+
+<ul>
+  <li><a href="http://learnlayout.com/position.html">Learn CSS Layout: position</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">MDN: position</a></li>
+</ul>
+
+<aside class="notes">
+(Nate)
+The Position property allows elements to be positioned in a document, relative to other elements.
+We can use it to overlap elements over one another.
+Flexbox + Position allows a lot of layout options, but for even more control, we need…
+</aside>
+
+---
+
+<!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
+
+<h2><a href="https://codepen.io/oknoway/pen/JjdORQw?editors=1100">Grid Layout</a></h2>
 
 <ul>
   <li><a href="http://cssgridgarden.com/">Grid Garden</a></li>
   <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">A Complete Guide to Grid</a></li>
-    <li><a href="https://gridbyexample.com/">Grid by Example</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Examine_grid_layouts">Debugging Grid Layouts</a></li>
-    <li><a href="https://labs.jensimmons.com/">Intro to CSS Grid: Jen Simmons</a></li>
-
+  <li><a href="https://gridbyexample.com/">Grid by Example</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">MDN: CSS Grid Layout</a></li>
+  <li><a href="https://www.youtube.com/watch?v=tFKrK4eAiUQ/">📺 Incredibly Easy Layouts with CSS Grid</a></li>
 </ul>
 
-<p><a href="http://jsbin.com/zuwarus/edit?html,output">Bonus Demo: CSS 
-Grid Template Areas</a></p>
+<p><a href="https://codepen.io/oknoway/pen/rNVYWNK?editors=1100">Bonus Demo: CSS Grid Template Areas</a></p>
 
 <aside class="notes">
 (Nate)
-
-@TODO review, clone demos to new URLs, review link resources
+Grid Layout is an extremely powerful layout model that can layout entire page areas, or small user interface elements.
+The grid is an intersecting set of horizontal and vertical lines that allows you to define fixed or flexible tracks and easily place and position elements.
 </aside>
 
 ---
 
 <!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
 
-<h2><a href="http://jsbin.com/gibuhe/edit?html,output">Media Queries and Responsive Design</a></h2>
+<h2><a href="https://codepen.io/oknoway/pen/RwPjoaP?editors=1100">Media Queries and Responsive Design</a></h2>
 
 <ul>
   <li><a href="http://mediaqueri.es/">Responsive design gallery</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">Using media queries</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries">MDN: Media Queries</a></li>
   <li><a href="https://css-tricks.com/snippets/css/media-queries-for-standard-devices/">Media Queries for Standard Devices</a></li>
   <li><a href="http://learnlayout.com/media-queries.html">Learn CSS Layout: media queries</a></li>
 </ul>
 
 <aside class="notes">
 (Nate)
-
-@TODO review, clone demos to new URLs, review link resources
+Media queries are the foundation of responsive design. They allow your design to adapt to the various device characteristics or settings.
+You can change your design when a user turns on "dark mode", or asks for animation to be disabled.
+Most frequently, we adapt our design to the size of the user's viewport.
 </aside>
 
 ---
 
 <!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
 
-<h2><a href="http://jsbin.com/gerexud/3/edit">Typography (Choosing Fonts)</a></h2>
+<h2><a href="https://codepen.io/oknoway/pen/vYOWyyO?editors=1100">Typography and Color</a></h2>
 
 <ul>
   <li><a href="https://www.google.com/fonts">Google Fonts</a></li>
   <li><a href="http://femmebot.github.io/google-type/">Google Web Fonts Typographic Project</a></li>
   <li><a href="http://fontpair.co/">Font Pair</a></li>
-  <li><a href="http://www.labnol.org/internet/best-google-font-combinations/28987/">Font tool roundup</a></li>
-</ul>
-
-<!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
-
-<h2><a href="http://jsbin.com/dugapa/7/edit">Typography (Sizing Type)</a></h2>
-
-<ul>
   <li><a href="http://type-scale.com/">TypeScale</a></li>
-  <li><a href="http://typecast.com/blog/a-more-modern-scale-for-web-typography">A More Modern Scale for Web Typography</a></li>
 </ul>
-
-<!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
-
-<h2><a href="http://jsbin.com/jafeza/6/edit?html,output">Adding Color</a></h2>
-
 <ul>
   <li><a href="https://flatuicolors.com/">Flat UI Colors</a></li>
-  <li><a href="http://esri.github.io/calcite-web/documentation/color/">Calcite Web Colors</a></li>
-  <li><a href="http://jxnblk.com/colorable/demos/matrix/">Color Pairing Matrix</a></li>
-  <li><a href="https://color.adobe.com/create/color-wheel/">Adobe Kuler</a></li>
+  <li><a href="https://color.adobe.com/create/color-wheel/">Adobe Color Wheel</a></li>
   <li><a href="http://www.colourlovers.com/palettes">Color Lovers</a></li>
 </ul>
 
 <aside class="notes">
 (Nate)
-
-@TODO condense to 1 slide, new combined demo, review link resources
-</aside>
-
----
-<!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
-
-<h2><a href="http://jsbin.com/babiwa/4/edit?html,output">Positioning</a></h2>
-
-<ul>
-  <li><a href="http://learnlayout.com/position.html">Learn CSS Layout: position</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">position</a></li>
-</ul>
-
-<aside class="notes">
-(Nate)
-
-@TODO review, clone demos to new URLs, review link resources
+Type is cool and color is fun.
 </aside>
 
 ---
@@ -453,12 +461,12 @@ true || false // true
 
 <aside class="notes">
 (Allison)
-Demo in console: 
-- arithmatic: 
+Demo in console:
+- arithmatic:
   let year = 2020;
-  year + 5; year - 255; year*10; year/3; 
+  year + 5; year - 255; year*10; year/3;
   Math.round(year)
-- comparisons 
+- comparisons
 3 > 1  // true
 3 === '3' // false
 'dog' != 'cat' // true
@@ -518,7 +526,7 @@ dog.name // 'Ginsburg'
 (Allison)
 
 * arrays are a way to store a list of items under a single variable name
-* some array methods mutate the original, some return a new array 
+* some array methods mutate the original, some return a new array
 * objects - a collection of related data. Properties and methods
 </aside>
 
@@ -595,7 +603,7 @@ JavaScript can interact with your HTML. The HTML on your page is represented by 
 
 * Select HTML elements
 * Listen for events & user interactions
-* Change HTML elements 
+* Change HTML elements
 
 [Demo](https://stackblitz.com/edit/js-8kewfg)
 
@@ -676,7 +684,7 @@ require([
 
 ## Don't jump into tools
 
-* The JS API is MORE then enough for simple mapping apps 
+* The JS API is MORE then enough for simple mapping apps
 * Add tools when you **KNOW** you will benefit from using them
 * Too many tools === Lots of complexity to manage
 * Don't touch tools until you feel limited
