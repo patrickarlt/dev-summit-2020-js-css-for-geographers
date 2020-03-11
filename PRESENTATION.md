@@ -564,8 +564,9 @@ dog.name // 'Ginsburg'
 
 ## JavaScript Patterns
 
-<aside class="notes">
-Pat
+<aside class="notes" data-markdown>
+(Pat)
+* This section shows common patterns you will see in JS code to help you understand them better
 </aside>
 
 ---
@@ -582,8 +583,9 @@ Pat
 
 [Event Loop and Callbacks Demo](https://codepen.io/patrickarlt/pen/eYNGjVJ?editors=0010)
 
-<aside class="notes">
-Pat
+<aside class="notes" data-markdown>
+(Pat)
+* Talk through demo, be quick, mention JS API, events
 </aside>
 
 ---
@@ -617,8 +619,9 @@ i.e. _I `Promise` to be a useful value in the future._
 
 [Demo](https://codepen.io/patrickarlt/pen/XWbeBEj?editors=0010)
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Pat)
+* Talk through demo, be quick, mention JS API
 </aside>
 
 ---
@@ -635,6 +638,11 @@ JavaScript can interact with your HTML. The HTML on your page is represented by 
 
 [Demo](https://stackblitz.com/edit/js-8kewfg)
 
+<aside class="notes" data-markdown>
+(Pat)
+* Talk through demo, mention other selectors
+</aside>
+
 ---
 
 <!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
@@ -649,8 +657,9 @@ The future! You will encounter this more often.
 
 [Demo](https://stackblitz.com/edit/js-jczbky)
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Pat)
+* Talk through demo, JS API will be able to do this later this year
 </aside>
 
 ---
@@ -672,8 +681,9 @@ require([
 
 [Demo](https://codepen.io/patrickarlt/pen/PoqJBrg)
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Pat)
+* Talk through demo, current way the JS API does things
 </aside>
 
 ---
@@ -682,8 +692,9 @@ require([
 
 ~120 lines of CSS, ~30 lines of JS.
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Pat)
+* Talk through demo, wrap up app
 </aside>
 
 ---
@@ -694,16 +705,18 @@ require([
 
 [Chaining Promises JS API Sample](https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=chaining-promises)
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Pat)
+* Talk through demo
 </aside>
 
 ---
 
 ## Tools & Frameworks
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Pat)
+* This is mostly a cautionary tale
 </aside>
 
 ---
@@ -717,8 +730,9 @@ require([
 * Too many tools === Lots of complexity to manage
 * Don't touch tools until you feel limited
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Pat)
+* Don't feel rushed to learn tools the basics apply everywhere and the JS API has enough to learn
 </aside>
 
 ---
@@ -730,8 +744,9 @@ require([
 * Bundlers - Combine modules and other assets
 * Frameworks - Architecture and structure for large apps/teams
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Pat)
+* General types of tools
 </aside>
 
 ---
@@ -743,8 +758,9 @@ require([
 * Bundlers - WebPack, Parcel, Rollup
 * Frameworks - React, Angular, Vue, Ember, Dojo, Tailwind, Bootstrap
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Pat)
+* Examples of tools
 </aside>
 
 ---
@@ -806,6 +822,4 @@ Slides at <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http:/
 
 <aside class="notes">
 (Pat)
-
-@TODO review, check slide link
 </aside>
