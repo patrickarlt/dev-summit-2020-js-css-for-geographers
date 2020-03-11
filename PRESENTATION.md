@@ -512,7 +512,7 @@ dogYears(3);
 ```
 
 ```js
-age => {
+(age) => {
   return age * 7
 }
 
@@ -543,7 +543,7 @@ dogs.map(dog => dog.toUpperCase()) // ['GINSBURG', 'BUNSEN', 'SPOT']
 
 let dog = {
   name: 'Ginsburg',
-  age: 4
+  age: 4,
   ageInDogYears: function(age) {return age * 7}
 }
 dog.name // 'Ginsburg'
