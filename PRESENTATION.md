@@ -800,10 +800,7 @@ require([
 
 ---
 
-<!-- .slide: data-background="./img/2020/devsummit/bg-rating.png" -->
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- .slide: data-background="./img/2020/devsummit/bg-4.png" -->
 
 Slides at <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://bit.ly/2PLJft4</a>
 
