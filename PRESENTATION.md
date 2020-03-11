@@ -16,9 +16,9 @@
 
 ## This talk is all fundamentals.
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Allison)
-* This is a very quick introduction to the world of web development - html, css, and JavaScript
+* This is a very quick introduction to the fundamentals of web development - HTML, CSS, and JavaScript
 </aside>
 
 ---
@@ -33,12 +33,13 @@ Designed to help you keep learning beyond this talk.
 
 Pretty much everything is a link.
 
-Slides <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://bit.ly/2PLJft4</a>
+Slides: <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://bit.ly/2PLJft4</a>
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Allison)
 * this is a lot to cover in a very short amount of time
 * so don't worry if things don't make sense right away
+* this talk is designed to be used as a resource for future learning
 </aside>
 
 ---
@@ -57,7 +58,7 @@ Slides <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://bi
 * Used Model Builder?
 
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Allison)
 * Technical knowledge from GIS translates very well to web development
 </aside>
@@ -80,12 +81,12 @@ npx http-server .
 * For fast prototyping use [CodePen](https://codepen.io) or [StackBlitz](https://stackblitz.com/)
 
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Allison)
-Using a web server doesn't necessarily mean you're serving pages on the internet for all to see.
-You can use a local web server to load your own static files
-Not comfortable on the command line? There are tons of great free resources online. Links to some in the resources slide
-In a hurry? Use a web tool like CodePen - there are lots of options
+* Using a web server doesn't necessarily mean you're serving pages on the internet for all to see.
+* You can use a local web server to load your own static files
+* Not comfortable on the command line? There are tons of great free resources online. Links to some in the resources slide
+* In a hurry? Use a web tool like CodePen for prototyping - there are lots of options
 </aside>
 
 ---
@@ -113,9 +114,17 @@ In a hurry? Use a web tool like CodePen - there are lots of options
 * [Try it in CodePen](https://codepen.io/araedavis/pen/eYNeBXo)
 * [MDN's HTML docs and guides](https://developer.mozilla.org/en-US/docs/Web/HTML)
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Allison)
+* Here's a basic html document
+* The title is what you see in title bar of the browser
+* Title and link tags go inside the head tag
+* Content goes inside the body tag
+* Script tags (JavaScript!) as a rule go at the end right before the closing body tag
+* But why? The page loads in order. So, if a bunch of HTML loads before your CSS - unstyled HTML! If a script is loading before all your HTML and CSS, your page will be blank and appear blocked - bad user experience! 
+* There's a lot more to HTML - recommend checking out MDN's guides and documentation for further reading 
 
+* Hand off to Nate
 
 </aside>
 
@@ -433,10 +442,13 @@ Type is cool and color is fun.
   <script src="app.js"></script>
   ```
 * In your browser's [DevTools console](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)
+  * Right click > `Inspect Element` > `Console` tab
+  * Keyboard: `Cmd+Option+I`(Mac), `Ctrl+Shift+I`(Windows, Linux)
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Allison)
-
+* What's a devtools console? we can open one up right in our web browser
+* Note - keyboard shortcuts differ slightly from browser to browser
 </aside>
 
 ---
@@ -464,8 +476,14 @@ true || false // true
 ```
 [MDN's First Steps JavaScript guide](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps)
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Allison)
+
+* variables can be declared with const (for unchanging values), var or let keyoards
+* strings go in double or single quotes, numbers and booleans (true/false) do not
+* increment or decrement a variable with double plus/double minus
+* we can concatenate strings
+
 Demo in console:
 - arithmatic:
   let year = 2020;
@@ -502,8 +520,13 @@ age => age * 7
 // these are the same!
 ```
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Allison)
+* a function definition consists of the function keyword, the name of the function, a list of parameters, the JS statements inside the curly braces that are run when the function is involved
+* the return statement specifies the value returned by the function
+* Defining a function does not execute it - you have to call the function in order to perform the actions within it
+* functions can be anonymous (unnamed), and can be passed as arguments to other functions
+* arrow syntax is another way of declaring a function - less verbose than using the function key word
 
 </aside>
 
@@ -527,12 +550,12 @@ dog.name // 'Ginsburg'
 
 ```
 
-<aside class="notes">
+<aside class="notes" data-markdown>
 (Allison)
 
 * arrays are a way to store a list of items under a single variable name
-* some array methods mutate the original, some return a new array
-* objects - a collection of related data. Properties and methods
+* JavaScript arrays have lots of built in methods - some array methods mutate the original, some return a new array
+* objects - a collection of related data. Properties (values) and methods(functions)
 </aside>
 
 ---
