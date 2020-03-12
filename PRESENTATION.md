@@ -1,3 +1,9 @@
+<!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
+
+## Allison Davis (1)
+
+---
+
 <!-- .slide: data-background="./img/2020/devsummit/bg-1.png" -->
 
 <h1 style="text-align: left; font-size: 80px; margin-top: -90px;"><b>JavaScript</b> and <b>CSS</b> <i>for Geographers</i></h1>
@@ -127,6 +133,12 @@ npx http-server .
 * Hand off to Nate
 
 </aside>
+
+---
+
+<!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
+
+## Nate Bedortha (2)
 
 ---
 
@@ -418,6 +430,12 @@ Type is cool and color is fun.
 
 ---
 
+<!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
+
+## Allison Davis (3)
+
+---
+
 <!-- .slide: data-background="./img/2020/devsummit/bg-4.png" -->
 
 ## JavaScript
@@ -474,26 +492,28 @@ true || false // true
 // 'not'
 !skyBlue // false
 ```
-[MDN's First Steps JavaScript guide](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps)
+* [MDN's First Steps JavaScript guide](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps)
+* [Try it in CodePen](https://codepen.io/araedavis/pen/qBdxKbY)
 
 <aside class="notes" data-markdown>
 (Allison)
+Demo in CodePen/console
 
-* variables can be declared with const (for unchanging values), var or let keyoards
+* variables can be declared with const (for unchanging values), var or let keywords
+* JavaScript infers the types
 * strings go in double or single quotes, numbers and booleans (true/false) do not
-* increment or decrement a variable with double plus/double minus
+
+* we can do math
+* Important, if we use an operator on a variable, it does not change the variable's value
+* increment or decrement a value with double plus/double minus
+
 * we can concatenate strings
 
-Demo in console:
-- arithmatic:
-  let year = 2020;
-  year + 5; year - 255; year*10; year/3;
-  Math.round(year)
-- comparisons
-3 > 1  // true
-3 === '3' // false
-'dog' != 'cat' // true
+* comparison operators
 
+* logical operators
+
+* Play around for yourself in CodePen or directly in your browser's console
 </aside>
 
 ---
@@ -550,6 +570,8 @@ dog.name // 'Ginsburg'
 
 ```
 
+[Try it in CodePen](https://codepen.io/araedavis/pen/LYVQrxJ)
+
 <aside class="notes" data-markdown>
 (Allison)
 
@@ -557,6 +579,12 @@ dog.name // 'Ginsburg'
 * JavaScript arrays have lots of built in methods - some array methods mutate the original, some return a new array
 * objects - a collection of related data. Properties (values) and methods(functions)
 </aside>
+
+---
+
+<!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
+
+## Patrick Arlt (4)
 
 ---
 
