@@ -14,6 +14,7 @@
 (Allison, Nate, Pat)
 
 @TODO verify names and slide link
+
 </aside>
 
 ---
@@ -54,15 +55,14 @@ Slides: <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://b
 
 ## Web Development is Hard
 
-* It's ok to feel overwhelmed
-* Good news: you're more equipped than you think!
+- It's ok to feel overwhelmed
+- Good news: you're more equipped than you think!
 
-* Scripted with ArcPy?
-* Scripted with Python?
-* Configured an app?
-* Used Arcade?
-* Used Model Builder?
-
+- Scripted with ArcPy?
+- Scripted with Python?
+- Configured an app?
+- Used Arcade?
+- Used Model Builder?
 
 <aside class="notes" data-markdown>
 (Allison)
@@ -75,17 +75,17 @@ Slides: <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://b
 
 ## A quick note on web servers
 
-* HTML, CSS, and JS all go in your web server
+- HTML, CSS, and JS all go in your web server
 
-* [How to set up a local web server](https://gist.github.com/jgravois/5e73b56fa7756fd00b89)
+- [How to set up a local web server](https://gist.github.com/jgravois/5e73b56fa7756fd00b89)
 
-* Install [Node](https://nodejs.org) > Terminal/Command Line/Windows Bash/Powershell
+- Install [Node](https://nodejs.org) > Terminal/Command Line/Windows Bash/Powershell
+
 ```bash
 npx http-server .
 ```
 
-* For fast prototyping use [CodePen](https://codepen.io) or [StackBlitz](https://stackblitz.com/)
-
+- For fast prototyping use [CodePen](https://codepen.io) or [StackBlitz](https://stackblitz.com/)
 
 <aside class="notes" data-markdown>
 (Allison)
@@ -105,7 +105,7 @@ npx http-server .
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Hello!</title>
     <!-- <link> (CSS) goes here -->
   </head>
@@ -117,8 +117,9 @@ npx http-server .
   </body>
 </html>
 ```
-* [Try it in CodePen](https://codepen.io/araedavis/pen/eYNeBXo)
-* [MDN's HTML docs and guides](https://developer.mozilla.org/en-US/docs/Web/HTML)
+
+- [Try it in CodePen](https://codepen.io/araedavis/pen/eYNeBXo)
+- [MDN's HTML docs and guides](https://developer.mozilla.org/en-US/docs/Web/HTML)
 
 <aside class="notes" data-markdown>
 (Allison)
@@ -127,10 +128,10 @@ npx http-server .
 * Title and link tags go inside the head tag
 * Content goes inside the body tag
 * Script tags (JavaScript!) as a rule go at the end right before the closing body tag
-* But why? The page loads in order. So, if a bunch of HTML loads before your CSS - unstyled HTML! If a script is loading before all your HTML and CSS, your page will be blank and appear blocked - bad user experience! 
-* There's a lot more to HTML - recommend checking out MDN's guides and documentation for further reading 
+* But why? The page loads in order. So, if a bunch of HTML loads before your CSS - unstyled HTML! If a script is loading before all your HTML and CSS, your page will be blank and appear blocked - bad user experience!
+* There's a lot more to HTML - recommend checking out MDN's guides and documentation for further reading
 
-* Hand off to Nate
+- Hand off to Nate
 
 </aside>
 
@@ -154,7 +155,7 @@ npx http-server .
 
 <aside class="notes">
 (Nate)
-CSS is a language for specifying how documents are presented to users — how they are styled, laid out, etc.
+CSS is a language for specifying how HTML documents are presented to users — how they're laid out, what typefaces they use, and what colors different elements should be.
 </aside>
 
 ---
@@ -180,10 +181,12 @@ CSS is a language for specifying how documents are presented to users — how th
 
 <aside class="notes">
 (Nate)
+Where do we put CSS?
+A CSS file, referenced by a link tag is the most common place; that way many HTML documents can reference the same CSS document.
 
-A link tag is the most common place to put CSS. Many HTML documents can reference the same CSS document.
+You can also style a single document directly by using the style tag inside the documents head.
 
-Inline styles are a bit tricky, and they only affect a single element.
+And as a last resort, you can put CSS inside an elements style attribute.
 
 </aside>
 
@@ -201,11 +204,11 @@ Inline styles are a bit tricky, and they only affect a single element.
 
 <aside class="notes">
 (Nate)
-This is a single CSS rule.
-Selectors: How we target something in our document.
-Properties: Identifiers that indicate stylistic features.
-Values: Each property is given a value that indicates your changes to that feature.
-
+This is a single CSS Rule, it's made up of Selectors, and sets of properties and values.
+Selectors "select" the elements inside the document, in this case the html tag, the body tag, and an element with the ID "map"
+Properties are Identifiers that indicate an elements specific stylistic features; here we're going to change the margin, width and height.
+Then Each property is given a value that indicates your changes to that feature, in this case, 0 and 100%.
+Style sheets are made up of many rules that are read in order. At the end of the document, the browser cascades every element's rules together and shows it to the user.
 </aside>
 
 ---
@@ -223,9 +226,10 @@ Styles _cascade_ into the final styles for the HTML elements that match their se
 
 <aside class="notes">
 (Nate)
-The way the cascade behaves is the key to understanding CSS.
+Let's take one step back and talk about the "C"; The "C" is for "Cascading".
+The browser loads CSS in a specific order: Browser defaults, then linked stylesheets, followed by style tags and style attributes.
 The order of the rules matter: the last rule in the source wins.
-But what happens when we declare the same properties: collision!
+Since the rules come from different places, you could be setting the same property to different values… that's where Specificity comes in.
 </aside>
 
 ---
@@ -246,11 +250,11 @@ When properties collide specificity determines which property wins.
 
 <aside class="notes">
 (Nate)
+When properties collide specificity determines which property wins.
 Each type of selector is more *specific* than the next.
 An ID selector can only match one element.
 A class selector can match different element types.
 An element selector matches all elements!
-
 </aside>
 
 ---
@@ -264,7 +268,9 @@ Right click on something you want to change click "Inspect Element"
 [Explore a Storymap](https://story.maps.arcgis.com/apps/Cascade/index.html?appid=46daf1304a0c4ad69a8935c7ed2ab692)
 
 <aside class="notes">
-(Nate) Preload this tab
+(Nate)
+A crucial tool when writing CSS is your browser's Developer Tools, which allows you to modify any CSS and see the results instantly.
+For example, this Story Map is beautiful, but we've been asked to really make this design sing. Let's change the color of this text box and see what we come up with.
 </aside>
 
 ---
@@ -279,7 +285,8 @@ Right click on something you want to change click "Inspect Element"
 (Nate)
 We've got a great idea for a web app: a map that displays the locations of non-gasoline alternative fueling stations.
 How do we build it?
-Let's start by thinking of the components of our app as "boxes"; in this case, we have a box for text information, and a box for our map.
+First we'll need to think about the layout… it looks like our design has two major components: a box for text information, and a box for our map.
+We can write some HTML to put these components on a page, but how can we move these boxes where we need them to go? We can use the "display" property.
 </aside>
 
 ---
@@ -298,9 +305,10 @@ Let's start by thinking of the components of our app as "boxes"; in this case, w
 
 <aside class="notes">
 (Nate)
-By default (normal flow) all elements are either *block* or *inline*, but not both.
-Block elements are laid out out one after the other, vertically, beginning at the top of a containing block.
-Inline elements are laid out horizontally, one after the other, beginning at the top of a containing block.
+By default all elements have a display value of *block* or *inline*. You can kind of guess what they do by the names, but let's look at some examples:
+Block elements are laid out out one after the other, vertically, beginning at the top of a containing block. Most of their dimensions can be changed with different CSS Properties
+Inline elements are laid out horizontally, one after the other, beginning at the top of a containing block. Since these elements are "in line" with each other, most of their dimensions can't be changed.
+And while we're talking about dimensions, this is the perfect time to mention Units.
 </aside>
 
 ---
@@ -323,6 +331,7 @@ Absolute length units represent an actual physical measurement: pixels, inches, 
 For a long time, we used pixels for every length, but as viewport sizes change, and designs needed to become more flexible, we needed:
 Relative length units represent a measurement in terms of some other distance:
 the size of a specific character or the line-height of a font, or the size of the viewport.
+Okay, quick detour for some basics, and now we're ready to layout our App UI. To do that, let's look at a layout model called Flexbox.
 </aside>
 
 ---
@@ -341,8 +350,10 @@ the size of a specific character or the line-height of a font, or the size of th
 <aside class="notes">
 (Nate)
 Flexbox is a layout model that's optimized for UI design.
-Flexible boxes layout their children along one dimension: by default horizontally (rows) or vertically (columns).
+Flexible boxes layout their children along one dimension: either horizontally or vertically.
 Flex children can "flex" their size to grow or shrink without overflowing their parents.
+In this demo, you can see the map element is always growing at twice the rate of the sidebar.
+This gives us a lot of control over our page layout, but sometimes we need to position things a little more specifically. For that we use the position property.
 </aside>
 
 ---
@@ -360,7 +371,8 @@ Flex children can "flex" their size to grow or shrink without overflowing their 
 (Nate)
 The Position property allows elements to be positioned in a document, relative to other elements.
 We can use it to overlap elements over one another.
-Flexbox + Position allows a lot of layout options, but for even more control, we need…
+Notice in this demo we've positioned four different widget elements over our map element.
+Flexbox + Position allows a lot of layout options, but for even more control, we need CSS Grid Layout
 </aside>
 
 ---
@@ -383,6 +395,8 @@ Flexbox + Position allows a lot of layout options, but for even more control, we
 (Nate)
 Grid Layout is an extremely powerful layout model that can layout entire page areas, or small user interface elements.
 The grid is an intersecting set of horizontal and vertical lines that allows you to define fixed or flexible tracks and easily place and position elements.
+In this demo, we're using properties like "grid-column", "grid-row" and "grid-area" to have precision control over our layout.
+Our layout is really coming together; we should start thinking about how our app will look on a smart phone.
 </aside>
 
 ---
@@ -400,9 +414,10 @@ The grid is an intersecting set of horizontal and vertical lines that allows you
 
 <aside class="notes">
 (Nate)
-Media queries are the foundation of responsive design. They allow your design to adapt to the various device characteristics or settings.
-You can change your design when a user turns on "dark mode", or asks for animation to be disabled.
-Most frequently, we adapt our design to the size of the user's viewport.
+Responsive design means your layout "responds" to a variety of devices or screen sizes.
+We'll use special CSS syntax called "media queries" to apply different CSS rules to different conditions.
+For example, a use could be using "dark mode" on their laptop, and your design could use a darker background color to match.
+Most frequently, we adapt our design to the size of the user's viewport. Let's take a look at this demo…
 </aside>
 
 ---
@@ -425,7 +440,10 @@ Most frequently, we adapt our design to the size of the user's viewport.
 
 <aside class="notes">
 (Nate)
-Type is cool and color is fun.
+Well, our apps almost done… but before we send our prototype over to the JavaScripters for some logic, let's give it a fresh coat of paint.
+We'll load up some snazzy fonts from Google Fonts, and we'll use Type Scale to generate a hierarchy for all our type.
+Let's also swing by the Adobe Color Wheel and create a new color scheme to really tie it all together.
+Ok, Allison, our app is all ready for you to add some JavaScript!
 </aside>
 
 ---
@@ -451,17 +469,19 @@ Type is cool and color is fun.
 
 ### Where does JavaScript go?
 
-* Inside a `<script>` tag.
+- Inside a `<script>` tag.
   ```html
-  <script>/* Put JS here*/</script>
+  <script>
+    /* Put JS here*/
+  </script>
   ```
-* Inside a `.js` file.
+- Inside a `.js` file.
   ```html
   <script src="app.js"></script>
   ```
-* In your browser's [DevTools console](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)
-  * Right click > `Inspect Element` > `Console` tab
-  * Keyboard: `Cmd+Option+I`(Mac), `Ctrl+Shift+I`(Windows, Linux)
+- In your browser's [DevTools console](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)
+  - Right click > `Inspect Element` > `Console` tab
+  - Keyboard: `Cmd+Option+I`(Mac), `Ctrl+Shift+I`(Windows, Linux)
 
 <aside class="notes" data-markdown>
 (Allison)
@@ -476,45 +496,46 @@ Type is cool and color is fun.
 ### [Variables](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var), [arithmetic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators), [comparison](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators) & [logic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
 
 ```js
-const dogName = 'Bunsen';
+const dogName = "Bunsen";
 var year = 2020;
 let skyBlue = true;
 
-year++ // 2021
-year-- // 2019
+year++; // 2021
+year--; // 2019
 
-'high' + 'five' // 'highfive'
+"high" + "five"; // 'highfive'
 
 // logical 'and'
-true && skyBlue // true
+true && skyBlue; // true
 // 'or'
-true || false // true
+true || false; // true
 // 'not'
-!skyBlue // false
+!skyBlue; // false
 ```
-* [MDN's First Steps JavaScript guide](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps)
-* [Try it in CodePen](https://codepen.io/araedavis/pen/qBdxKbY)
+
+- [MDN's First Steps JavaScript guide](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps)
+- [Try it in CodePen](https://codepen.io/araedavis/pen/qBdxKbY)
 
 <aside class="notes" data-markdown>
 (Allison)
 Demo in CodePen/console
 
-* variables can be declared with const (for unchanging values), var or let keywords
-* JavaScript infers the types
-* strings go in double or single quotes, numbers and booleans (true/false) do not
+- variables can be declared with const (for unchanging values), var or let keywords
+- JavaScript infers the types
+- strings go in double or single quotes, numbers and booleans (true/false) do not
 
-* we can do math
-* Important, if we use an operator on a variable, it does not change the variable's value
-* increment or decrement a value with double plus/double minus
+- we can do math
+- Important, if we use an operator on a variable, it does not change the variable's value
+- increment or decrement a value with double plus/double minus
 
-* we can concatenate strings
+- we can concatenate strings
 
-* comparison operators
+- comparison operators
 
-* logical operators
+- logical operators
 
-* Play around for yourself in CodePen or directly in your browser's console
-</aside>
+- Play around for yourself in CodePen or directly in your browser's console
+  </aside>
 
 ---
 
@@ -532,11 +553,11 @@ dogYears(3);
 ```
 
 ```js
-(age) => {
-  return age * 7
-}
+age => {
+  return age * 7;
+};
 
-age => age * 7
+age => age * 7;
 // these are the same!
 ```
 
@@ -555,19 +576,20 @@ age => age * 7
 ## [Arrays[]](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays) and [objects{}](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
 
 ```js
-var dogs = ['Ginsburg', 'Bunsen'];
-dogs[0] // 'Ginsburg'
-dogs.push('Spot');
-dogs.length // 3
-dogs.map(dog => dog.toUpperCase()) // ['GINSBURG', 'BUNSEN', 'SPOT']
+var dogs = ["Ginsburg", "Bunsen"];
+dogs[0]; // 'Ginsburg'
+dogs.push("Spot");
+dogs.length; // 3
+dogs.map(dog => dog.toUpperCase()); // ['GINSBURG', 'BUNSEN', 'SPOT']
 
 let dog = {
-  name: 'Ginsburg',
+  name: "Ginsburg",
   age: 4,
-  ageInDogYears: function(age) {return age * 7}
-}
-dog.name // 'Ginsburg'
-
+  ageInDogYears: function(age) {
+    return age * 7;
+  }
+};
+dog.name; // 'Ginsburg'
 ```
 
 [Try it in CodePen](https://codepen.io/araedavis/pen/LYVQrxJ)
@@ -575,10 +597,10 @@ dog.name // 'Ginsburg'
 <aside class="notes" data-markdown>
 (Allison)
 
-* arrays are a way to store a list of items under a single variable name
-* JavaScript arrays have lots of built in methods - some array methods mutate the original, some return a new array
-* objects - a collection of related data. Properties (values) and methods(functions)
-</aside>
+- arrays are a way to store a list of items under a single variable name
+- JavaScript arrays have lots of built in methods - some array methods mutate the original, some return a new array
+- objects - a collection of related data. Properties (values) and methods(functions)
+  </aside>
 
 ---
 
@@ -603,11 +625,11 @@ dog.name // 'Ginsburg'
 
 ### JavaScript is _Asynchronous_
 
-* JavaScript is _single threaded_
-* Runs one function in its entirety
-* Then run the next function
-* This is the "Event Loop"
-* "Callback functions" define thing that happen *later*
+- JavaScript is _single threaded_
+- Runs one function in its entirety
+- Then run the next function
+- This is the "Event Loop"
+- "Callback functions" define thing that happen _later_
 
 [Event Loop and Callbacks Demo](https://codepen.io/patrickarlt/pen/eYNGjVJ?editors=0010)
 
@@ -623,19 +645,19 @@ dog.name // 'Ginsburg'
 ### Promises
 
 ```js
-function processResponse (response) {
+function processResponse(response) {
   return response.json();
 }
 
-function doSomethingWithUser (user) {
+function doSomethingWithUser(user) {
   console.log(user); // prints a bunch of user info
 }
 
-function anyErrors (error) {
-  console.error('what have you done!', error);
+function anyErrors(error) {
+  console.error("what have you done!", error);
 }
 
-let user = fetch('https://randomuser.me/api/')
+let user = fetch("https://randomuser.me/api/")
   .then(processResponse)
   .then(doSomethingWithUser)
   .catch(anyErrors);
@@ -660,9 +682,9 @@ i.e. _I `Promise` to be a useful value in the future._
 
 JavaScript can interact with your HTML. The HTML on your page is represented by the DOM (**D**ocument **O**bject **M**odel).
 
-* Select HTML elements
-* Listen for events & user interactions
-* Change HTML elements
+- Select HTML elements
+- Listen for events & user interactions
+- Change HTML elements
 
 [Demo](https://stackblitz.com/edit/js-8kewfg)
 
@@ -753,10 +775,10 @@ require([
 
 ## Don't jump into tools
 
-* The JS API is MORE then enough for simple mapping apps
-* Add tools when you **KNOW** you will benefit from using them
-* Too many tools === Lots of complexity to manage
-* Don't touch tools until you feel limited
+- The JS API is MORE then enough for simple mapping apps
+- Add tools when you **KNOW** you will benefit from using them
+- Too many tools === Lots of complexity to manage
+- Don't touch tools until you feel limited
 
 <aside class="notes" data-markdown>
 (Pat)
@@ -767,10 +789,10 @@ require([
 
 ## Types of tools
 
-* Modules - Formats for splitting up and sharing code
-* Compilers - Transform code often adding extra features
-* Bundlers - Combine modules and other assets
-* Frameworks - Architecture and structure for large apps/teams
+- Modules - Formats for splitting up and sharing code
+- Compilers - Transform code often adding extra features
+- Bundlers - Combine modules and other assets
+- Frameworks - Architecture and structure for large apps/teams
 
 <aside class="notes" data-markdown>
 (Pat)
@@ -781,10 +803,10 @@ require([
 
 ## Examples of tools
 
-* Modules - *JS Modules*, *AMD*, CommonJS, CSS Modules
-* Compilers - Babel, TypeScript, SASS, LESS
-* Bundlers - WebPack, Parcel, Rollup
-* Frameworks - React, Angular, Vue, Ember, Dojo, Tailwind, Bootstrap
+- Modules - _JS Modules_, _AMD_, CommonJS, CSS Modules
+- Compilers - Babel, TypeScript, SASS, LESS
+- Bundlers - WebPack, Parcel, Rollup
+- Frameworks - React, Angular, Vue, Ember, Dojo, Tailwind, Bootstrap
 
 <aside class="notes" data-markdown>
 (Pat)
@@ -797,8 +819,8 @@ require([
 
 ## Node JS and NPM
 
-* [Node JS](https://nodejs.org/en/) - Run JavaScript on a server or desktop. Build web servers, APIs and CLI tools.
-* [NPM](https://www.npmjs.com/) - Package manager and distribution system for JS code. Analogous to Pip or Conda in Python.
+- [Node JS](https://nodejs.org/en/) - Run JavaScript on a server or desktop. Build web servers, APIs and CLI tools.
+- [NPM](https://www.npmjs.com/) - Package manager and distribution system for JS code. Analogous to Pip or Conda in Python.
 
 [Learn Node JS at NodeSchool](https://nodeschool.io/)
 
@@ -812,12 +834,12 @@ require([
 
 ## Development tools
 
-* Set up your local dev environment: [Do I have a web server running?](https://gist.github.com/jgravois/5e73b56fa7756fd00b89)
-* Prototype with [CodePen](https://codepen.io), [JSBin](https://jsbin.com) or [StackBlitz](https://stackblitz.com/)
-* [Visual Studio Code](https://code.visualstudio.com/)
-* [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/javascript/)
-* [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools)
-* [ArcGIS JS CLI](https://github.com/Esri/arcgis-js-cli)
+- Set up your local dev environment: [Do I have a web server running?](https://gist.github.com/jgravois/5e73b56fa7756fd00b89)
+- Prototype with [CodePen](https://codepen.io), [JSBin](https://jsbin.com) or [StackBlitz](https://stackblitz.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/javascript/)
+- [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools)
+- [ArcGIS JS CLI](https://github.com/Esri/arcgis-js-cli)
 
 <aside class="notes">
 (Pat)
@@ -827,16 +849,16 @@ require([
 
 ## Keep learning
 
-* [ArcGIS Developer Tutorials](https://developers.arcgis.com/labs/?product=JavaScript&topic=any)
-* [MDN: Learn web development](https://developer.mozilla.org/en-US/docs/Learn)
-* [CSS Tricks Beginner Guide](https://css-tricks.com/guides/beginner/)
-* [Eloquent JavaScript](http://eloquentjavascript.net/)
-* [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
-* [JavaScript 30](https://javascript30.com/)
-* [NodeSchool](https://nodeschool.io/)
-* [Command Line Power User](https://commandlinepoweruser.com/)
-* [Codecademy Bash Scripting course](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)
-* [Front End Handbook](https://frontendmasters.com/books/front-end-handbook/2019/)
+- [ArcGIS Developer Tutorials](https://developers.arcgis.com/labs/?product=JavaScript&topic=any)
+- [MDN: Learn web development](https://developer.mozilla.org/en-US/docs/Learn)
+- [CSS Tricks Beginner Guide](https://css-tricks.com/guides/beginner/)
+- [Eloquent JavaScript](http://eloquentjavascript.net/)
+- [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+- [JavaScript 30](https://javascript30.com/)
+- [NodeSchool](https://nodeschool.io/)
+- [Command Line Power User](https://commandlinepoweruser.com/)
+- [Codecademy Bash Scripting course](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)
+- [Front End Handbook](https://frontendmasters.com/books/front-end-handbook/2019/)
 
 <aside class="notes">
 (Pat)
