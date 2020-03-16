@@ -1,3 +1,9 @@
+<!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
+
+## Allison Davis (1)
+
+---
+
 <!-- .slide: data-background="./img/2020/devsummit/bg-1.png" -->
 
 <h1 style="text-align: left; font-size: 80px; margin-top: -90px;"><b>JavaScript</b> and <b>CSS</b> <i>for Geographers</i></h1>
@@ -5,11 +11,10 @@
     <p style="text-align: left; font-size: 1.5em;">Slides: <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://bit.ly/2PLJft4</a>
 
 <aside class="notes">
-(Allison, Nate, Pat) ~10s
+
 </aside>
 
 ---
-
 <!-- .slide: data-background="./img/2020/devsummit/bg-4.png" -->
 
 ## This talk is all fundamentals.
@@ -119,12 +124,18 @@ npx http-server .
 * Title and link tags go inside the head tag
 * Content goes inside the body tag
 * Script tags (JavaScript!) as a rule go at the end right before the closing body tag
-* But why? The page loads in order. So, if a bunch of HTML loads before your CSS - unstyled HTML! If a script is loading before all your HTML and CSS, your page will be blank and appear blocked - bad user experience! 
+* But why? The page loads in order. So, if a bunch of HTML loads before your CSS - unstyled HTML! If a script is loading before all your HTML and CSS, your page will be blank and appear blocked - bad user experience!
 * There's a lot more to HTML - recommend checking out MDN's guides and documentation for further reading
 
 - Hand off to Nate
 
 </aside>
+
+---
+
+<!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
+
+## Nate Bedortha (2)
 
 ---
 
@@ -139,8 +150,8 @@ npx http-server .
 }</code></pre>
 
 <aside class="notes">
-(Nate) ~30
-CSS is a language for specifying how documents are presented to users — how they are styled, laid out, etc.
+(Nate)
+CSS is a language for specifying how HTML documents are presented to users — how they're laid out, what typefaces they use, and what colors different elements should be.
 </aside>
 
 ---
@@ -165,10 +176,13 @@ CSS is a language for specifying how documents are presented to users — how th
   ```
 
 <aside class="notes">
-(Nate) ~30
-A link tag is the most common place to put CSS. Many HTML documents can reference the same CSS document.
+(Nate)
+Where do we put CSS?
+A CSS file, referenced by a link tag is the most common place; that way many HTML documents can reference the same CSS document.
 
-Inline styles are a bit tricky, and they only affect a single element.
+You can also style a single document directly by using the style tag inside the documents head.
+
+And as a last resort, you can put CSS inside an elements style attribute.
 
 </aside>
 
@@ -185,12 +199,12 @@ Inline styles are a bit tricky, and they only affect a single element.
 }</code></pre>
 
 <aside class="notes">
-(Nate) ~35
-This is a single CSS rule.
-Selectors: How we target something in our document.
-Properties: Identifiers that indicate stylistic features.
-Values: Each property is given a value that indicates your changes to that feature.
-
+(Nate)
+This is a single CSS Rule, it's made up of Selectors, and sets of properties and values.
+Selectors "select" the elements inside the document, in this case the html tag, the body tag, and an element with the ID "map"
+Properties are Identifiers that indicate an elements specific stylistic features; here we're going to change the margin, width and height.
+Then Each property is given a value that indicates your changes to that feature, in this case, 0 and 100%.
+Style sheets are made up of many rules that are read in order. At the end of the document, the browser cascades every element's rules together and shows it to the user.
 </aside>
 
 ---
@@ -207,10 +221,11 @@ Styles _cascade_ into the final styles for the HTML elements that match their se
 - Style attributes <code>&lt;div style="..."&gt;</code>
 
 <aside class="notes">
-(Nate) ~20
-The way the cascade behaves is the key to understanding CSS.
+(Nate)
+Let's take one step back and talk about the "C"; The "C" is for "Cascading".
+The browser loads CSS in a specific order: Browser defaults, then linked stylesheets, followed by style tags and style attributes.
 The order of the rules matter: the last rule in the source wins.
-But what happens when we declare the same properties: collision!
+Since the rules come from different places, you could be setting the same property to different values… that's where Specificity comes in.
 </aside>
 
 ---
@@ -230,12 +245,12 @@ When properties collide specificity determines which property wins.
    3. `div` - &lt;div&gt;
 
 <aside class="notes">
-(Nate) ~40s
+(Nate)
+When properties collide specificity determines which property wins.
 Each type of selector is more *specific* than the next.
 An ID selector can only match one element.
 A class selector can match different element types.
 An element selector matches all elements!
-
 </aside>
 
 ---
@@ -249,7 +264,9 @@ Right click on something you want to change click "Inspect Element"
 [Explore a Storymap](https://story.maps.arcgis.com/apps/Cascade/index.html?appid=46daf1304a0c4ad69a8935c7ed2ab692)
 
 <aside class="notes">
-(Nate) Preload this tab -~45
+(Nate)
+A crucial tool when writing CSS is your browser's Developer Tools, which allows you to modify any CSS and see the results instantly.
+For example, this Story Map is beautiful, but we've been asked to really make this design sing. Let's change the color of this text box and see what we come up with.
 </aside>
 
 ---
@@ -264,7 +281,8 @@ Right click on something you want to change click "Inspect Element"
 (Nate) ~20
 We've got a great idea for a web app: a map that displays the locations of non-gasoline alternative fueling stations.
 How do we build it?
-Let's start by thinking of the components of our app as "boxes"; in this case, we have a box for text information, and a box for our map.
+First we'll need to think about the layout… it looks like our design has two major components: a box for text information, and a box for our map.
+We can write some HTML to put these components on a page, but how can we move these boxes where we need them to go? We can use the "display" property.
 </aside>
 
 ---
@@ -282,10 +300,11 @@ Let's start by thinking of the components of our app as "boxes"; in this case, w
 </ul>
 
 <aside class="notes">
-(Nate) ~1:10
-By default (normal flow) all elements are either *block* or *inline*, but not both.
-Block elements are laid out out one after the other, vertically, beginning at the top of a containing block.
-Inline elements are laid out horizontally, one after the other, beginning at the top of a containing block.
+(Nate)
+By default all elements have a display value of *block* or *inline*. You can kind of guess what they do by the names, but let's look at some examples:
+Block elements are laid out out one after the other, vertically, beginning at the top of a containing block. Most of their dimensions can be changed with different CSS Properties
+Inline elements are laid out horizontally, one after the other, beginning at the top of a containing block. Since these elements are "in line" with each other, most of their dimensions can't be changed.
+And while we're talking about dimensions, this is the perfect time to mention Units.
 </aside>
 
 ---
@@ -308,6 +327,7 @@ Absolute length units represent an actual physical measurement: pixels, inches, 
 For a long time, we used pixels for every length, but as viewport sizes change, and designs needed to become more flexible, we needed:
 Relative length units represent a measurement in terms of some other distance:
 the size of a specific character or the line-height of a font, or the size of the viewport.
+Okay, quick detour for some basics, and now we're ready to layout our App UI. To do that, let's look at a layout model called Flexbox.
 </aside>
 
 ---
@@ -326,8 +346,10 @@ the size of a specific character or the line-height of a font, or the size of th
 <aside class="notes">
 (Nate) ~1:15
 Flexbox is a layout model that's optimized for UI design.
-Flexible boxes layout their children along one dimension: by default horizontally (rows) or vertically (columns).
+Flexible boxes layout their children along one dimension: either horizontally or vertically.
 Flex children can "flex" their size to grow or shrink without overflowing their parents.
+In this demo, you can see the map element is always growing at twice the rate of the sidebar.
+This gives us a lot of control over our page layout, but sometimes we need to position things a little more specifically. For that we use the position property.
 </aside>
 
 ---
@@ -345,7 +367,8 @@ Flex children can "flex" their size to grow or shrink without overflowing their 
 (Nate) ~45s
 The Position property allows elements to be positioned in a document, relative to other elements.
 We can use it to overlap elements over one another.
-Flexbox + Position allows a lot of layout options, but for even more control, we need…
+Notice in this demo we've positioned four different widget elements over our map element.
+Flexbox + Position allows a lot of layout options, but for even more control, we need CSS Grid Layout
 </aside>
 
 ---
@@ -368,6 +391,8 @@ Flexbox + Position allows a lot of layout options, but for even more control, we
 (Nate) ~50s
 Grid Layout is an extremely powerful layout model that can layout entire page areas, or small user interface elements.
 The grid is an intersecting set of horizontal and vertical lines that allows you to define fixed or flexible tracks and easily place and position elements.
+In this demo, we're using properties like "grid-column", "grid-row" and "grid-area" to have precision control over our layout.
+Our layout is really coming together; we should start thinking about how our app will look on a smart phone.
 </aside>
 
 ---
@@ -384,10 +409,11 @@ The grid is an intersecting set of horizontal and vertical lines that allows you
 </ul>
 
 <aside class="notes">
-(Nate) ~1m
-Media queries are the foundation of responsive design. They allow your design to adapt to the various device characteristics or settings.
-You can change your design when a user turns on "dark mode", or asks for animation to be disabled.
-Most frequently, we adapt our design to the size of the user's viewport.
+(Nate)
+Responsive design means your layout "responds" to a variety of devices or screen sizes.
+We'll use special CSS syntax called "media queries" to apply different CSS rules to different conditions.
+For example, a use could be using "dark mode" on their laptop, and your design could use a darker background color to match.
+Most frequently, we adapt our design to the size of the user's viewport. Let's take a look at this demo…
 </aside>
 
 ---
@@ -409,9 +435,13 @@ Most frequently, we adapt our design to the size of the user's viewport.
 </ul>
 
 <aside class="notes">
-(Nate) ~45s
-Type is cool and color is fun.
+Ok, Allison, our app is all ready for you to add some JavaScript!
 </aside>
+
+---
+
+
+## Allison Davis (3)
 
 ---
 
@@ -473,28 +503,29 @@ true || false; // true
 !skyBlue; // false
 ```
 
-[MDN's First Steps JavaScript guide](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps)
+- [MDN's First Steps JavaScript guide](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps)
+- [Try it in CodePen](https://codepen.io/araedavis/pen/qBdxKbY)
 
 <aside class="notes" data-markdown>
-(Allison) ~4m
+(Allison)
+Demo in CodePen/console
 
-- variables can be declared with const (for unchanging values), var or let keyoards
+- variables can be declared with const (for unchanging values), var or let keywords
+- JavaScript infers the types
 - strings go in double or single quotes, numbers and booleans (true/false) do not
-- increment or decrement a variable with double plus/double minus
+
+- we can do math
+- Important, if we use an operator on a variable, it does not change the variable's value
+- increment or decrement a value with double plus/double minus
+
 - we can concatenate strings
 
-Demo in console:
+- comparison operators
 
-- arithmatic:
-  let year = 2020;
-  year + 5; year - 255; year\*10; year/3;
-  Math.round(year)
-- comparisons
-  3 > 1 // true
-  3 === '3' // false
-  'dog' != 'cat' // true
+- logical operators
 
-</aside>
+- Play around for yourself in CodePen or directly in your browser's console
+  </aside>
 
 ---
 
@@ -534,20 +565,23 @@ age => age * 7;
 ## [Arrays[]](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays) and [objects{}](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
 
 ```js
-var dogs = ['Ginsburg', 'Bunsen'];
-dogs[0] // 'Ginsburg'
-dogs.push('Spot');
-dogs.length // 3
-dogs.map(dog => dog.toUpperCase()) // ['GINSBURG', 'BUNSEN', 'SPOT']
+var dogs = ["Ginsburg", "Bunsen"];
+dogs[0]; // 'Ginsburg'
+dogs.push("Spot");
+dogs.length; // 3
+dogs.map(dog => dog.toUpperCase()); // ['GINSBURG', 'BUNSEN', 'SPOT']
 
 let dog = {
-  name: 'Ginsburg',
-  age: 4
-  ageInDogYears: function(age) {return age * 7}
-}
-dog.name // 'Ginsburg'
-
+  name: "Ginsburg",
+  age: 4,
+  ageInDogYears: function(age) {
+    return age * 7;
+  }
+};
+dog.name; // 'Ginsburg'
 ```
+
+[Try it in CodePen](https://codepen.io/araedavis/pen/LYVQrxJ)
 
 <aside class="notes" data-markdown>
 (Allison) ~3m
@@ -557,8 +591,11 @@ dog.name // 'Ginsburg'
 - objects - a collection of related data. Properties (values) and methods(functions)
   </aside>
 
----
+<!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
 
+## Patrick Arlt (4)
+
+---
 <!-- .slide: data-background="./img/2020/devsummit/bg-4.png" -->
 
 ## JavaScript Patterns
