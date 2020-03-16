@@ -5,9 +5,7 @@
     <p style="text-align: left; font-size: 1.5em;">Slides: <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://bit.ly/2PLJft4</a>
 
 <aside class="notes">
-(Allison, Nate, Pat)
-
-@TODO verify names and slide link
+(Allison, Nate, Pat) ~10s
 </aside>
 
 ---
@@ -17,7 +15,7 @@
 ## This talk is all fundamentals.
 
 <aside class="notes" data-markdown>
-(Allison)
+(Allison) ~12s
 * This is a very quick introduction to the fundamentals of web development - HTML, CSS, and JavaScript
 </aside>
 
@@ -36,7 +34,7 @@ Pretty much everything is a link.
 Slides: <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://bit.ly/2PLJft4</a>
 
 <aside class="notes" data-markdown>
-(Allison)
+(Allison) ~30
 * this is a lot to cover in a very short amount of time
 * so don't worry if things don't make sense right away
 * this talk is designed to be used as a resource for future learning
@@ -48,18 +46,17 @@ Slides: <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://b
 
 ## Web Development is Hard
 
-* It's ok to feel overwhelmed
-* Good news: you're more equipped than you think!
+- It's ok to feel overwhelmed
+- Good news: you're more equipped than you think!
 
-* Scripted with ArcPy?
-* Scripted with Python?
-* Configured an app?
-* Used Arcade?
-* Used Model Builder?
-
+- Scripted with ArcPy?
+- Scripted with Python?
+- Configured an app?
+- Used Arcade?
+- Used Model Builder?
 
 <aside class="notes" data-markdown>
-(Allison)
+(Allison) ~45
 * Technical knowledge from GIS translates very well to web development
 </aside>
 
@@ -69,20 +66,20 @@ Slides: <a href="http://bit.ly/2PLJft4" style="font-family: monospace;">http://b
 
 ## A quick note on web servers
 
-* HTML, CSS, and JS all go in your web server
+- HTML, CSS, and JS all go in your web server
 
-* [How to set up a local web server](https://gist.github.com/jgravois/5e73b56fa7756fd00b89)
+- [How to set up a local web server](https://gist.github.com/jgravois/5e73b56fa7756fd00b89)
 
-* Install [Node](https://nodejs.org) > Terminal/Command Line/Windows Bash/Powershell
+- Install [Node](https://nodejs.org) > Terminal/Command Line/Windows Bash/Powershell
+
 ```bash
 npx http-server .
 ```
 
-* For fast prototyping use [CodePen](https://codepen.io) or [StackBlitz](https://stackblitz.com/)
-
+- For fast prototyping use [CodePen](https://codepen.io) or [StackBlitz](https://stackblitz.com/)
 
 <aside class="notes" data-markdown>
-(Allison)
+(Allison) ~45
 * Using a web server doesn't necessarily mean you're serving pages on the internet for all to see.
 * You can use a local web server to load your own static files
 * Not comfortable on the command line? There are tons of great free resources online. Links to some in the resources slide
@@ -99,7 +96,7 @@ npx http-server .
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Hello!</title>
     <!-- <link> (CSS) goes here -->
   </head>
@@ -111,20 +108,21 @@ npx http-server .
   </body>
 </html>
 ```
-* [Try it in CodePen](https://codepen.io/araedavis/pen/eYNeBXo)
-* [MDN's HTML docs and guides](https://developer.mozilla.org/en-US/docs/Web/HTML)
+
+- [Try it in CodePen](https://codepen.io/araedavis/pen/eYNeBXo)
+- [MDN's HTML docs and guides](https://developer.mozilla.org/en-US/docs/Web/HTML)
 
 <aside class="notes" data-markdown>
-(Allison)
+(Allison) ~1:30
 * Here's a basic html document
 * The title is what you see in title bar of the browser
 * Title and link tags go inside the head tag
 * Content goes inside the body tag
 * Script tags (JavaScript!) as a rule go at the end right before the closing body tag
 * But why? The page loads in order. So, if a bunch of HTML loads before your CSS - unstyled HTML! If a script is loading before all your HTML and CSS, your page will be blank and appear blocked - bad user experience! 
-* There's a lot more to HTML - recommend checking out MDN's guides and documentation for further reading 
+* There's a lot more to HTML - recommend checking out MDN's guides and documentation for further reading
 
-* Hand off to Nate
+- Hand off to Nate
 
 </aside>
 
@@ -141,7 +139,7 @@ npx http-server .
 }</code></pre>
 
 <aside class="notes">
-(Nate)
+(Nate) ~30
 CSS is a language for specifying how documents are presented to users — how they are styled, laid out, etc.
 </aside>
 
@@ -167,8 +165,7 @@ CSS is a language for specifying how documents are presented to users — how th
   ```
 
 <aside class="notes">
-(Nate)
-
+(Nate) ~30
 A link tag is the most common place to put CSS. Many HTML documents can reference the same CSS document.
 
 Inline styles are a bit tricky, and they only affect a single element.
@@ -188,7 +185,7 @@ Inline styles are a bit tricky, and they only affect a single element.
 }</code></pre>
 
 <aside class="notes">
-(Nate)
+(Nate) ~35
 This is a single CSS rule.
 Selectors: How we target something in our document.
 Properties: Identifiers that indicate stylistic features.
@@ -210,7 +207,7 @@ Styles _cascade_ into the final styles for the HTML elements that match their se
 - Style attributes <code>&lt;div style="..."&gt;</code>
 
 <aside class="notes">
-(Nate)
+(Nate) ~20
 The way the cascade behaves is the key to understanding CSS.
 The order of the rules matter: the last rule in the source wins.
 But what happens when we declare the same properties: collision!
@@ -233,7 +230,7 @@ When properties collide specificity determines which property wins.
    3. `div` - &lt;div&gt;
 
 <aside class="notes">
-(Nate)
+(Nate) ~40s
 Each type of selector is more *specific* than the next.
 An ID selector can only match one element.
 A class selector can match different element types.
@@ -252,7 +249,7 @@ Right click on something you want to change click "Inspect Element"
 [Explore a Storymap](https://story.maps.arcgis.com/apps/Cascade/index.html?appid=46daf1304a0c4ad69a8935c7ed2ab692)
 
 <aside class="notes">
-(Nate) Preload this tab
+(Nate) Preload this tab -~45
 </aside>
 
 ---
@@ -264,7 +261,7 @@ Right click on something you want to change click "Inspect Element"
 <img src="app.png" alt="A Simple Mapping App" style="border: none; background: transparent; box-shadow: none;">
 
 <aside class="notes">
-(Nate)
+(Nate) ~20
 We've got a great idea for a web app: a map that displays the locations of non-gasoline alternative fueling stations.
 How do we build it?
 Let's start by thinking of the components of our app as "boxes"; in this case, we have a box for text information, and a box for our map.
@@ -285,7 +282,7 @@ Let's start by thinking of the components of our app as "boxes"; in this case, w
 </ul>
 
 <aside class="notes">
-(Nate)
+(Nate) ~1:10
 By default (normal flow) all elements are either *block* or *inline*, but not both.
 Block elements are laid out out one after the other, vertically, beginning at the top of a containing block.
 Inline elements are laid out horizontally, one after the other, beginning at the top of a containing block.
@@ -305,7 +302,7 @@ Inline elements are laid out horizontally, one after the other, beginning at the
 </ul>
 
 <aside class="notes">
-(Nate)
+(Nate) ~1:30
 There are lots of different units, but usually we're talking about length units. Length units can be either Absolute or Relative.
 Absolute length units represent an actual physical measurement: pixels, inches, or centimeters.
 For a long time, we used pixels for every length, but as viewport sizes change, and designs needed to become more flexible, we needed:
@@ -327,7 +324,7 @@ the size of a specific character or the line-height of a font, or the size of th
 </ul>
 
 <aside class="notes">
-(Nate)
+(Nate) ~1:15
 Flexbox is a layout model that's optimized for UI design.
 Flexible boxes layout their children along one dimension: by default horizontally (rows) or vertically (columns).
 Flex children can "flex" their size to grow or shrink without overflowing their parents.
@@ -345,7 +342,7 @@ Flex children can "flex" their size to grow or shrink without overflowing their 
 </ul>
 
 <aside class="notes">
-(Nate)
+(Nate) ~45s
 The Position property allows elements to be positioned in a document, relative to other elements.
 We can use it to overlap elements over one another.
 Flexbox + Position allows a lot of layout options, but for even more control, we need…
@@ -368,7 +365,7 @@ Flexbox + Position allows a lot of layout options, but for even more control, we
 <p><a href="https://codepen.io/oknoway/pen/rNVYWNK?editors=1100">Bonus Demo: CSS Grid Template Areas</a></p>
 
 <aside class="notes">
-(Nate)
+(Nate) ~50s
 Grid Layout is an extremely powerful layout model that can layout entire page areas, or small user interface elements.
 The grid is an intersecting set of horizontal and vertical lines that allows you to define fixed or flexible tracks and easily place and position elements.
 </aside>
@@ -387,7 +384,7 @@ The grid is an intersecting set of horizontal and vertical lines that allows you
 </ul>
 
 <aside class="notes">
-(Nate)
+(Nate) ~1m
 Media queries are the foundation of responsive design. They allow your design to adapt to the various device characteristics or settings.
 You can change your design when a user turns on "dark mode", or asks for animation to be disabled.
 Most frequently, we adapt our design to the size of the user's viewport.
@@ -412,7 +409,7 @@ Most frequently, we adapt our design to the size of the user's viewport.
 </ul>
 
 <aside class="notes">
-(Nate)
+(Nate) ~45s
 Type is cool and color is fun.
 </aside>
 
@@ -433,21 +430,22 @@ Type is cool and color is fun.
 
 ### Where does JavaScript go?
 
-* Inside a `<script>` tag.
+- Inside a `<script>` tag.
   ```html
-  <script>/* Put JS here*/</script>
+  <script>
+    /* Put JS here*/
+  </script>
   ```
-* Inside a `.js` file.
+- Inside a `.js` file.
   ```html
   <script src="app.js"></script>
   ```
-* In your browser's [DevTools console](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)
-  * Right click > `Inspect Element` > `Console` tab
-  * Keyboard: `Cmd+Option+I`(Mac), `Ctrl+Shift+I`(Windows, Linux)
+- In your browser's [DevTools console](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)
+  - Right click > `Inspect Element` > `Console` tab
+  - Keyboard: `Cmd+Option+I`(Mac), `Ctrl+Shift+I`(Windows, Linux)
 
 <aside class="notes" data-markdown>
-(Allison)
-* What's a devtools console? we can open one up right in our web browser
+(Allison) ~1:15 * What's a devtools console? we can open one up right in our web browser
 * Note - keyboard shortcuts differ slightly from browser to browser
 </aside>
 
@@ -458,41 +456,43 @@ Type is cool and color is fun.
 ### [Variables](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var), [arithmetic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators), [comparison](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators) & [logic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
 
 ```js
-const dogName = 'Bunsen';
+const dogName = "Bunsen";
 var year = 2020;
 let skyBlue = true;
 
-year++ // 2021
-year-- // 2019
+year++; // 2021
+year--; // 2019
 
-'high' + 'five' // 'highfive'
+"high" + "five"; // 'highfive'
 
 // logical 'and'
-true && skyBlue // true
+true && skyBlue; // true
 // 'or'
-true || false // true
+true || false; // true
 // 'not'
-!skyBlue // false
+!skyBlue; // false
 ```
+
 [MDN's First Steps JavaScript guide](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps)
 
 <aside class="notes" data-markdown>
-(Allison)
+(Allison) ~4m
 
-* variables can be declared with const (for unchanging values), var or let keyoards
-* strings go in double or single quotes, numbers and booleans (true/false) do not
-* increment or decrement a variable with double plus/double minus
-* we can concatenate strings
+- variables can be declared with const (for unchanging values), var or let keyoards
+- strings go in double or single quotes, numbers and booleans (true/false) do not
+- increment or decrement a variable with double plus/double minus
+- we can concatenate strings
 
 Demo in console:
+
 - arithmatic:
   let year = 2020;
-  year + 5; year - 255; year*10; year/3;
+  year + 5; year - 255; year\*10; year/3;
   Math.round(year)
 - comparisons
-3 > 1  // true
-3 === '3' // false
-'dog' != 'cat' // true
+  3 > 1 // true
+  3 === '3' // false
+  'dog' != 'cat' // true
 
 </aside>
 
@@ -513,16 +513,15 @@ dogYears(3);
 
 ```js
 age => {
-  return age * 7
-}
+  return age * 7;
+};
 
-age => age * 7
+age => age * 7;
 // these are the same!
 ```
 
 <aside class="notes" data-markdown>
-(Allison)
-* a function definition consists of the function keyword, the name of the function, a list of parameters, the JS statements inside the curly braces that are run when the function is involved
+(Allison) ~1:45* a function definition consists of the function keyword, the name of the function, a list of parameters, the JS statements inside the curly braces that are run when the function is involved
 * the return statement specifies the value returned by the function
 * Defining a function does not execute it - you have to call the function in order to perform the actions within it
 * functions can be anonymous (unnamed), and can be passed as arguments to other functions
@@ -551,12 +550,12 @@ dog.name // 'Ginsburg'
 ```
 
 <aside class="notes" data-markdown>
-(Allison)
+(Allison) ~3m
 
-* arrays are a way to store a list of items under a single variable name
-* JavaScript arrays have lots of built in methods - some array methods mutate the original, some return a new array
-* objects - a collection of related data. Properties (values) and methods(functions)
-</aside>
+- arrays are a way to store a list of items under a single variable name
+- JavaScript arrays have lots of built in methods - some array methods mutate the original, some return a new array
+- objects - a collection of related data. Properties (values) and methods(functions)
+  </aside>
 
 ---
 
@@ -565,7 +564,7 @@ dog.name // 'Ginsburg'
 ## JavaScript Patterns
 
 <aside class="notes" data-markdown>
-(Pat)
+(Pat) ~11s
 * This section shows common patterns you will see in JS code to help you understand them better
 </aside>
 
@@ -575,16 +574,16 @@ dog.name // 'Ginsburg'
 
 ### JavaScript is _Asynchronous_
 
-* JavaScript is _single threaded_
-* Runs one function in its entirety
-* Then run the next function
-* This is the "Event Loop"
-* "Callback functions" define thing that happen *later*
+- JavaScript is _single threaded_
+- Runs one function in its entirety
+- Then run the next function
+- This is the "Event Loop"
+- "Callback functions" define thing that happen _later_
 
 [Event Loop and Callbacks Demo](https://codepen.io/patrickarlt/pen/eYNGjVJ?editors=0010)
 
 <aside class="notes" data-markdown>
-(Pat)
+(Pat) ~2:23
 * Talk through demo, be quick, mention JS API, events
 </aside>
 
@@ -595,19 +594,19 @@ dog.name // 'Ginsburg'
 ### Promises
 
 ```js
-function processResponse (response) {
+function processResponse(response) {
   return response.json();
 }
 
-function doSomethingWithUser (user) {
+function doSomethingWithUser(user) {
   console.log(user); // prints a bunch of user info
 }
 
-function anyErrors (error) {
-  console.error('what have you done!', error);
+function anyErrors(error) {
+  console.error("what have you done!", error);
 }
 
-let user = fetch('https://randomuser.me/api/')
+let user = fetch("https://randomuser.me/api/")
   .then(processResponse)
   .then(doSomethingWithUser)
   .catch(anyErrors);
@@ -620,7 +619,7 @@ i.e. _I `Promise` to be a useful value in the future._
 [Demo](https://codepen.io/patrickarlt/pen/XWbeBEj?editors=0010)
 
 <aside class="notes" data-markdown>
-(Pat)
+(Pat) ~1:52
 * Talk through demo, be quick, mention JS API
 </aside>
 
@@ -632,14 +631,14 @@ i.e. _I `Promise` to be a useful value in the future._
 
 JavaScript can interact with your HTML. The HTML on your page is represented by the DOM (**D**ocument **O**bject **M**odel).
 
-* Select HTML elements
-* Listen for events & user interactions
-* Change HTML elements
+- Select HTML elements
+- Listen for events & user interactions
+- Change HTML elements
 
 [Demo](https://stackblitz.com/edit/js-8kewfg)
 
 <aside class="notes" data-markdown>
-(Pat)
+(Pat) ~3:34
 * Talk through demo, mention other selectors
 </aside>
 
@@ -658,7 +657,7 @@ The future! You will encounter this more often.
 [Demo](https://stackblitz.com/edit/js-jczbky)
 
 <aside class="notes" data-markdown>
-(Pat)
+(Pat) ~1:45
 * Talk through demo, JS API will be able to do this later this year
 </aside>
 
@@ -682,7 +681,7 @@ require([
 [Demo](https://codepen.io/patrickarlt/pen/PoqJBrg)
 
 <aside class="notes" data-markdown>
-(Pat)
+(Pat)  ~1:20
 * Talk through demo, current way the JS API does things
 </aside>
 
@@ -693,7 +692,7 @@ require([
 ~120 lines of CSS, ~30 lines of JS.
 
 <aside class="notes" data-markdown>
-(Pat)
+(Pat) ~1:20
 * Talk through demo, wrap up app
 </aside>
 
@@ -706,7 +705,7 @@ require([
 [Chaining Promises JS API Sample](https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=chaining-promises)
 
 <aside class="notes" data-markdown>
-(Pat)
+(Pat) ~1:20
 * Talk through demo
 </aside>
 
@@ -715,7 +714,7 @@ require([
 ## Tools & Frameworks
 
 <aside class="notes" data-markdown>
-(Pat)
+(Pat) 12s~
 * This is mostly a cautionary tale
 </aside>
 
@@ -725,10 +724,10 @@ require([
 
 ## Don't jump into tools
 
-* The JS API is MORE then enough for simple mapping apps
-* Add tools when you **KNOW** you will benefit from using them
-* Too many tools === Lots of complexity to manage
-* Don't touch tools until you feel limited
+- The JS API is MORE then enough for simple mapping apps
+- Add tools when you **KNOW** you will benefit from using them
+- Too many tools === Lots of complexity to manage
+- Don't touch tools until you feel limited
 
 <aside class="notes" data-markdown>
 (Pat)
@@ -739,13 +738,13 @@ require([
 
 ## Types of tools
 
-* Modules - Formats for splitting up and sharing code
-* Compilers - Transform code often adding extra features
-* Bundlers - Combine modules and other assets
-* Frameworks - Architecture and structure for large apps/teams
+- Modules - Formats for splitting up and sharing code
+- Compilers - Transform code often adding extra features
+- Bundlers - Combine modules and other assets
+- Frameworks - Architecture and structure for large apps/teams
 
 <aside class="notes" data-markdown>
-(Pat)
+(Pat) ~30s
 * General types of tools
 </aside>
 
@@ -753,13 +752,13 @@ require([
 
 ## Examples of tools
 
-* Modules - *JS Modules*, *AMD*, CommonJS, CSS Modules
-* Compilers - Babel, TypeScript, SASS, LESS
-* Bundlers - WebPack, Parcel, Rollup
-* Frameworks - React, Angular, Vue, Ember, Dojo, Tailwind, Bootstrap
+- Modules - _JS Modules_, _AMD_, CommonJS, CSS Modules
+- Compilers - Babel, TypeScript, SASS, LESS
+- Bundlers - WebPack, Parcel, Rollup
+- Frameworks - React, Angular, Vue, Ember, Dojo, Tailwind, Bootstrap
 
 <aside class="notes" data-markdown>
-(Pat)
+(Pat) ~10s
 * Examples of tools
 </aside>
 
@@ -769,8 +768,8 @@ require([
 
 ## Node JS and NPM
 
-* [Node JS](https://nodejs.org/en/) - Run JavaScript on a server or desktop. Build web servers, APIs and CLI tools.
-* [NPM](https://www.npmjs.com/) - Package manager and distribution system for JS code. Analogous to Pip or Conda in Python.
+- [Node JS](https://nodejs.org/en/) - Run JavaScript on a server or desktop. Build web servers, APIs and CLI tools.
+- [NPM](https://www.npmjs.com/) - Package manager and distribution system for JS code. Analogous to Pip or Conda in Python.
 
 [Learn Node JS at NodeSchool](https://nodeschool.io/)
 
@@ -784,12 +783,12 @@ require([
 
 ## Development tools
 
-* Set up your local dev environment: [Do I have a web server running?](https://gist.github.com/jgravois/5e73b56fa7756fd00b89)
-* Prototype with [CodePen](https://codepen.io), [JSBin](https://jsbin.com) or [StackBlitz](https://stackblitz.com/)
-* [Visual Studio Code](https://code.visualstudio.com/)
-* [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/javascript/)
-* [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools)
-* [ArcGIS JS CLI](https://github.com/Esri/arcgis-js-cli)
+- Set up your local dev environment: [Do I have a web server running?](https://gist.github.com/jgravois/5e73b56fa7756fd00b89)
+- Prototype with [CodePen](https://codepen.io), [JSBin](https://jsbin.com) or [StackBlitz](https://stackblitz.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/javascript/)
+- [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools)
+- [ArcGIS JS CLI](https://github.com/Esri/arcgis-js-cli)
 
 <aside class="notes">
 (Pat)
@@ -799,16 +798,16 @@ require([
 
 ## Keep learning
 
-* [ArcGIS Developer Tutorials](https://developers.arcgis.com/labs/?product=JavaScript&topic=any)
-* [MDN: Learn web development](https://developer.mozilla.org/en-US/docs/Learn)
-* [CSS Tricks Beginner Guide](https://css-tricks.com/guides/beginner/)
-* [Eloquent JavaScript](http://eloquentjavascript.net/)
-* [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
-* [JavaScript 30](https://javascript30.com/)
-* [NodeSchool](https://nodeschool.io/)
-* [Command Line Power User](https://commandlinepoweruser.com/)
-* [Codecademy Bash Scripting course](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)
-* [Front End Handbook](https://frontendmasters.com/books/front-end-handbook/2019/)
+- [ArcGIS Developer Tutorials](https://developers.arcgis.com/labs/?product=JavaScript&topic=any)
+- [MDN: Learn web development](https://developer.mozilla.org/en-US/docs/Learn)
+- [CSS Tricks Beginner Guide](https://css-tricks.com/guides/beginner/)
+- [Eloquent JavaScript](http://eloquentjavascript.net/)
+- [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+- [JavaScript 30](https://javascript30.com/)
+- [NodeSchool](https://nodeschool.io/)
+- [Command Line Power User](https://commandlinepoweruser.com/)
+- [Codecademy Bash Scripting course](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)
+- [Front End Handbook](https://frontendmasters.com/books/front-end-handbook/2019/)
 
 <aside class="notes">
 (Pat)
