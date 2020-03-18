@@ -1,9 +1,3 @@
-<!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
-
-## Allison Davis (1)
-
----
-
 <!-- .slide: data-background="./img/2020/devsummit/bg-1.png" -->
 
 <h1 style="text-align: left; font-size: 80px; margin-top: -90px;"><b>JavaScript</b> and <b>CSS</b> <i>for Geographers</i></h1>
@@ -15,6 +9,7 @@
 </aside>
 
 ---
+
 <!-- .slide: data-background="./img/2020/devsummit/bg-4.png" -->
 
 ## This talk is all fundamentals.
@@ -130,12 +125,6 @@ npx http-server .
 - Hand off to Nate
 
 </aside>
-
----
-
-<!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
-
-## Nate Bedortha (2)
 
 ---
 
@@ -271,7 +260,7 @@ For example, this Story Map is beautiful, but we've been asked to really make th
 
 ---
 
-<!-- .slide: data-background="./img/2020/devsummit/bg-6.png" -->
+<!-- .slide: data-background="./img/2020/devsummit/bg-4.png" -->
 
 ## Let's Build an App!
 
@@ -440,11 +429,6 @@ Ok, Allison, our app is all ready for you to add some JavaScript!
 
 ---
 
-
-## Allison Davis (3)
-
----
-
 <!-- .slide: data-background="./img/2020/devsummit/bg-4.png" -->
 
 ## JavaScript
@@ -593,9 +577,8 @@ dog.name; // 'Ginsburg'
 
 <!-- .slide: data-background="./img/2020/devsummit/bg-2.png" -->
 
-## Patrick Arlt (4)
-
 ---
+
 <!-- .slide: data-background="./img/2020/devsummit/bg-4.png" -->
 
 ## JavaScript Patterns
@@ -672,7 +655,7 @@ JavaScript can interact with your HTML. The HTML on your page is represented by 
 - Listen for events & user interactions
 - Change HTML elements
 
-[Demo](https://stackblitz.com/edit/js-8kewfg)
+[Demo](https://stackblitz.com/edit/dom-and-html)
 
 <aside class="notes" data-markdown>
 (Pat) ~3:34
@@ -691,7 +674,7 @@ import { something } from 'some-file.js';
 
 The future! You will encounter this more often.
 
-[Demo](https://stackblitz.com/edit/js-jczbky)
+[Demo](https://stackblitz.com/edit/js-modules-dev-summit-2020)
 
 <aside class="notes" data-markdown>
 (Pat) ~1:45
@@ -715,7 +698,7 @@ require([
 
 `require` is a fancy way of adding `<script>` tags to load code on demand.
 
-[Demo](https://codepen.io/patrickarlt/pen/PoqJBrg)
+[Demo](https://codepen.io/patrickarlt/pen/PoqJBrg?editors=0010)
 
 <aside class="notes" data-markdown>
 (Pat)  ~1:20
@@ -724,7 +707,7 @@ require([
 
 ---
 
-### <a href="https://jsbin.com/xuxavejuqe/edit?html,js,output">Lets finish our app</a>
+### <a href="https://jsbin.com/xuxavejuqe/edit?js,output">Lets finish our app</a>
 
 ~120 lines of CSS, ~30 lines of JS.
 
